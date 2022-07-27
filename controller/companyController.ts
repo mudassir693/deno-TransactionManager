@@ -68,3 +68,29 @@ export const getCompanyById = async(req:any,res:any)=>{
         return res.setStatus(500).json({data:error,error:true})
     }
 }
+
+export const updateById = async(req:any,res:any)=>{
+    try {
+        const {Name,Email,...others} = req.parsedBody
+
+        if(others.Password){
+            others.Password = await bcrypt.hash(others.Password)
+        }
+        const resp = await CompanyCollection.updateOne({_id: new ObjectId(req.params.id)})
+    } catch (error) {
+        console.log('Company get by id error: ', error)
+        return res.setStatus(500).json({data:error,error:true})
+    }
+}
+
+export const deleteById = async(req:any,res:any)=>{
+    try {
+        console.log('id: ',req.params.id)
+        const resp = await CompanyCollection.deleteOne({_id: new ObjectId(req.params.id)})
+
+        return res.setStatus(200).json({data:resp,error:false})
+    } catch (error) {
+        console.log('Company get by id error: ', error)
+        return res.setStatus(500).json({data:error,error:true})
+    }
+}
