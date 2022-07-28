@@ -5,7 +5,7 @@ const router = Router()
 
 router
     .post('/add',addOrder)
-    .get('/getAllpayments/',getAllOrders)
+    .get('/getAllOrders/',getAllOrders)
     .get('/getById/:id',getOrderById)
     .put('/updateById/:id',updateOrder)
     .delete('/delete/:id',deleteOrder)
