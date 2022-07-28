@@ -11,4 +11,6 @@ const db = client.database("TransactionsManager");
 
 export const CompanyCollection = db.collection("Company");
 
+export const PaymentCollection = db.collection("Payment");
+
 export default db
