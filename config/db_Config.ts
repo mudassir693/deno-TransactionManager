@@ -13,4 +13,7 @@ export const CompanyCollection = db.collection("Company");
 
 export const PaymentCollection = db.collection("Payment");
 
+export const OrderCollection = db.collection("Order");
+
+
 export default db

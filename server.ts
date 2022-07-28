@@ -3,6 +3,7 @@ console.log('deno server is running..')
 import { opine,json } from "https://deno.land/x/opine@2.2.0/mod.ts";
 import companyRoute from './routes/company.ts'
 import paymentRoute from './routes/payment.ts'
+import orderRoute from './routes/order.ts'
 
 
 const app = opine()
@@ -21,6 +22,7 @@ app.get('/',(req:any,res:any) => {
 
 app.use('/api/companies/',companyRoute)
 app.use('/api/payments/',paymentRoute)
+app.use('/api/orders/',orderRoute)
 
 app.listen(5000,()=>{
     console.log('server is running on port 5000.')
