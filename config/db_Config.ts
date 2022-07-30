@@ -15,5 +15,7 @@ export const PaymentCollection = db.collection("Payment");
 
 export const OrderCollection = db.collection("Order");
 
+export const ledgerCollection = db.collection('Ledgers')
+
 
 export default db

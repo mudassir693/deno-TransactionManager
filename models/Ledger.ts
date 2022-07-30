@@ -6,3 +6,5 @@ interface Ledger {
     debit:number|string
     Date:string
 }
+
+export default Ledger
