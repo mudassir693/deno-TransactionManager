@@ -3,8 +3,8 @@ interface Ledger {
     Balance:number
     PreviousBalance:number
     Credit:number|string
-    debit:number|string
-    Date:string
+    Debit:number|string
+    Dated:string
 }
 
 export default Ledger
