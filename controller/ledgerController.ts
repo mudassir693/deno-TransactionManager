@@ -210,3 +210,5 @@ export const deleteLedger = async (req:any ,res:any)=>{
         return res.setStatus(500).json({data:error,error:true})
     }
 }
+
+
