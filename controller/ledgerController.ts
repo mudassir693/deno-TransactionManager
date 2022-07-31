@@ -196,9 +196,9 @@ export const deleteLedger = async (req:any ,res:any)=>{
             eachledger.Balance = eachledger.Balance + difference
             eachledger.PreviousBalance = eachledger.PreviousBalance + difference
 
-            console.log('eachledger : ', eachledger)
+            console.log('eachledger : ', eachledger._id,' ', eachledger)
 
-            await ledgerCollection.updateOne({_id:new ObjectId(eachledger._id)},{$set: eachledger})
+            await ledgerCollection.updateOne({_id:eachledger._id},{$set: eachledger})
         })
 
         const deleteLedger = await ledgerCollection.deleteOne({_id:new ObjectId(req.params.id)})
