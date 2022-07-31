@@ -1,4 +1,6 @@
 interface Ledger {
+    CompanyId:string,
+    RetailerId:string,
     TransactionType:string // Order or Payment,
     Balance:number
     PreviousBalance:number
